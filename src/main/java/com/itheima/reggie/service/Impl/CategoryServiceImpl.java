@@ -15,6 +15,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> implements CategoryService {
+
+
+//   根据id删除分类，删除之前需要进行判断
+
+
   @Autowired
   private DishService dishService;
   @Autowired
@@ -24,7 +29,8 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
 
     @Override
     public void remove(Long id) {
-            LambdaQueryWrapper<Dish> dishLambdaQueryWrapper = new LambdaQueryWrapper<>();
+        //构造查询条件
+        LambdaQueryWrapper<Dish> dishLambdaQueryWrapper = new LambdaQueryWrapper<>();
             //添加查询条件，根据分类id 进行查询
             dishLambdaQueryWrapper.eq(Dish::getCategoryId,id);
             int count1=dishService.count(dishLambdaQueryWrapper);
@@ -39,9 +45,10 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
             LambdaQueryWrapper<Setmeal> setmealLambdaQueryWrapper=new LambdaQueryWrapper<>();
             //添加查询条件，根据分类id进行查询
             setmealLambdaQueryWrapper.eq(Setmeal::getCategoryId,id);
-            int count2=setmealService.count();
+            int count2=setmealService.count(setmealLambdaQueryWrapper);
             if(count2>0){
                 //已经关联套餐，抛出一个业务异常
+             throw new CustomException("当前分类下关联了套餐，不能删除");
 
             }
 
