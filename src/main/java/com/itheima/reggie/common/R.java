@@ -8,7 +8,7 @@ import java.util.Map;
 public class R<T> {
 
     private Integer code; //编码：1成功，0和其它数字为失败
-//测试git
+
 
     private String msg; //错误信息
 
