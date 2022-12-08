@@ -29,6 +29,19 @@
 
   <dependencies>
     <dependency>
+      <groupId>com.aliyun</groupId>
+      <artifactId>aliyun-java-sdk-core</artifactId>
+      <version>4.5.16</version>
+    </dependency>
+    <dependency>
+      <groupId>com.aliyun</groupId>
+      <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+      <version>2.1.0</version>
+    </dependency>
+
+
+
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
@@ -98,8 +111,14 @@
 
 
 
-
   </dependencies>
+  <!-- 配置事务管理器 -->
+  <bean id="transactionManager"
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+        p:dataSource-ref="dataSource" />
+
+  <!-- 指明使用注解的方式来管理事务 -->
+  <tx:annotation-driven transaction-manager="transactionManager" />
 
   <build>
     <finalName>reggie_take_out</finalName>

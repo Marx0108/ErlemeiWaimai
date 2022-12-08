@@ -8,6 +8,7 @@ import java.util.Map;
 public class R<T> {
 
     private Integer code; //编码：1成功，0和其它数字为失败
+//测试git
 
     private String msg; //错误信息
 
@@ -19,6 +20,7 @@ public class R<T> {
         R<T> r = new R<T>();
         r.data = object;
         r.code = 1;
+        System.out.println("输出成功");
         return r;
     }
 
