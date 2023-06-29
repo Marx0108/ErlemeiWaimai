@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -24,7 +25,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <java.version>11</java.version>
+    <java.version>8</java.version>
   </properties>
 
   <dependencies>
@@ -103,22 +104,7 @@
       <artifactId>druid-spring-boot-starter</artifactId>
       <version>1.1.23</version>
     </dependency>
-
-
-
-
-
-
-
-
   </dependencies>
-  <!-- 配置事务管理器 -->
-  <bean id="transactionManager"
-        class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
-        p:dataSource-ref="dataSource" />
-
-  <!-- 指明使用注解的方式来管理事务 -->
-  <tx:annotation-driven transaction-manager="transactionManager" />
 
   <build>
     <finalName>reggie_take_out</finalName>
@@ -127,10 +113,18 @@
         <plugin>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
-          <version>3.3.1</version>
+          <version>2.3.12.RELEASE</version>
+
         </plugin>
 
       </plugins>
     </pluginManagement>
   </build>
+<!--  &lt;!&ndash;&lt;!&ndash; 配置事务管理器 &ndash;&gt;&ndash;&gt;-->
+<!--    <bean id="transactionManager"-->
+<!--          class="org.springframework.jdbc.datasource.DataSourceTransactionManager"-->
+<!--          p:dataSource-ref="dataSource" />-->
+
+<!--    &lt;!&ndash; 指明使用注解的方式来管理事务 &ndash;&gt;-->
+<!--     <tx:annotation-driven transaction-manager="transactionManager"/>-->
 </project>

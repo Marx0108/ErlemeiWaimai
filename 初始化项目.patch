@@ -1,0 +1,15 @@
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pom.xml	(revision bf913558d68b7169ada37f0248dd1fdba8876102)
++++ pom.xml	(date 1666264935989)
+@@ -38,7 +38,6 @@
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-starter</artifactId>
+     </dependency>
+-
+     <dependency>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-starter-test</artifactId>
