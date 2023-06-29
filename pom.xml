@@ -13,11 +13,11 @@
 
 
   <groupId>org.example</groupId>
-  <artifactId>Erlemei</artifactId>
+  <artifactId>ErlemeiWaimai</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>reggie_take_out Maven Webapp</name>
+  <name>ErlemeiWaimai Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -107,7 +107,7 @@
   </dependencies>
 
   <build>
-    <finalName>reggie_take_out</finalName>
+    <finalName>ErlemeiWaimai</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
